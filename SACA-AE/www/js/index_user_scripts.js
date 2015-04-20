@@ -1,3 +1,4 @@
+
 (function()
 {
  "use strict";
@@ -115,10 +116,10 @@
                 var list_html = "";
                 var panel_content = "";
              $(xmlHttpRequest.responseXML)
-                .find('GetComisionesResult')
+                .find('AlertaComisionProfesor')
                 .each(function()
              {
-                 alert($(this).find('AlertaComisionProfesor').text());
+                 alert("aqui: "+$(this).find('COMISION').text());
                  
                  
                 nombre= $(this).find('COMISION').text();
@@ -131,7 +132,11 @@
                  
                  
                  panel_content = '<h2>'+nombre+'<p>Profesor: '+profesor+'</p><p>Inicio: '+inicio+'</p><p>Fin: '+fin+'</p><p>Entidad: '+entidad+'</p>';
-            $.ui.addContentDiv(id, panel_content, "Movie Info"); 
+                 
+                 
+                 
+                 
+            //$.ui.addContentDiv(id, panel_content, "Movie Info"); 
                  
                  list_html += '<li><a href="#'+id+'">'+ nombre +'</a></li>';
              });
