@@ -4,11 +4,11 @@
 <!--To change the contents of this file, see the documentation on the intelxdk.config.additions.xml file.-->
 <intelxdk:version value="1.0"/>
 <intelxdk:cordova-cli version="4.1.2"/>
-<name>SingleAppView</name>
+<name>SACA-AE</name>
 <description>Template to develop a packaged mobile web app using the App Designer UI editor.</description>
 <author>Intel XDK</author>
 <content src="index.html"/>
 <preference name="ios-target" value="6"/>
 <preference name="ios-configuration" value="adhoc"/>
-<!--creationInfo:{"src":"appDesigner","projectTypeName":"com.intel.xdk.projecttype.webapp"}-->
+<!--creationInfo:{"src":"https://appcenter.html5tools-software.intel.com/api/v2.0/redirect/projectrenderers/release-2015-ww13/webapp/templates-single-view-ad/sample.zip","projectTypeName":"com.intel.xdk.projecttype.webapp"}-->
 <preference name="debuggable" value="false"/></widget>

@@ -70,6 +70,16 @@
         <script type="application/javascript" src="app_framework/2.1/appframework.js"></script>
         <script type="application/javascript" src="app_framework/2.1/appframework.ui.js" data-ver="1"></script>
         <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="xdk/ad/af_subpage.js"></script>
+        <!--            
+            You may substitute jQuery for the App Framework selector library.
+            See http://app-framework-software.intel.com/documentation.php#afui/afui_jquery
+        -->
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="sidebar/js/hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/jquery.hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/swipe-hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/sidebar.js"></script>
     </head>
 
     <body id="afui">
@@ -81,7 +91,7 @@
             <h1>Login</h1>
         </header>
         <header class="wrapping-col wrap-element uib_w_12" data-uib="app_framework/header" data-ver="2" id="af-header-6">
-            <h1>Cursos/Comisiones/Proyectos</h1>
+            <h1>Comisiones</h1>
         </header>
         <header class="wrapping-col wrap-element uib_w_13 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-7"><a class="button backButton">Volver</a>
             <h1>Hola soy Item 1</h1>
@@ -110,7 +120,8 @@
                                     <div class="table-thing with-label widget uib_w_8" data-uib="app_framework/input" data-ver="1">
                                         <input class="wide-control" placeholder="Email" type="text" id="txt_correo">
                                     </div>
-                                    <a class="button widget uib_w_10 d-margins green" data-uib="app_framework/button" data-ver="1" id="but_login">Login</a><span class="uib_shim"></span>
+                                    <a class="button widget uib_w_10 d-margins green" data-uib="app_framework/button" data-ver="1" id="but_login">Login</a><a class="button widget uib_w_15 d-margins" data-uib="app_framework/button" data-ver="1" id="but_prueba">Button</a>
+                                    <span class="uib_shim"></span>
                                 </div>
                             </div>
                             <span class="uib_shim"></span>
@@ -161,10 +172,15 @@
 
             </div>
             <div class="upage vertical-col panel" id="list_page" data-header="af-header-6" data-footer="none">
-                <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
-                    <div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
-                        <div id="datos" class="widget-container content-area vertical-col">
 
+                <div class="grid grid-pad urow uib_row_3 row-height-3" data-uib="layout/row" data-ver="0">
+                    <div class="col uib_col_4 col-0_12-12" data-uib="layout/col" data-ver="0">
+                        <div class="widget-container content-area vertical-col">
+
+                            <ul class="list widget uib_w_25 d-margins" data-uib="app_framework/listview" data-ver="1" id ="list_comisiones5">
+                                <li class="widget uib_w_28" data-uib="app_framework/listitem" data-ver="1"><a>List Item</a>
+                                </li>
+                            </ul><span class="uib_shim"></span>
                         </div>
                     </div>
                     <span class="uib_shim"></span>
@@ -185,6 +201,33 @@
                         </div>
                     </div>
                     <span class="uib_shim"></span>
+                </div>
+            </div>
+            <div class="upage panel" id="page_comisiones" data-header="none" data-footer="none">
+                <div class="outer-element uib_w_24 uib_crossbar topbar bar-bg thumb-bg bar-gutter" data-uib="layout/top_crossbar" data-ver="1" data-anim="{'style':'overlap', 'v':40, 'side':'top', 'dur':200, 'io':true}">
+                    <div class="sidebar-content content-area vertical-col">
+
+                    </div>
+                </div>
+                <div class="upage-outer">
+                    <div class="upage-content content-area vertical-col left" id="page_83_75">
+                        <div class="uib-grid widget uib_w_19 grid-text grid-height d-margins" data-uib="layout/grid" data-ver="0">
+                            <div class="uib-grid-row">
+                                <div class="uib-grid-cell widget-container"></div>
+                            </div>
+                            <div class="uib-grid-row">
+                                <div class="uib-grid-cell widget-container">
+                                    <ul class="list widget uib_w_20 d-margins" data-uib="app_framework/listview" data-ver="1" id="list_nombre_comisiones">
+                                        <li class="widget uib_w_21" data-uib="app_framework/listitem" data-ver="1"><a>List Item</a>
+                                        </li>
+                                        <li class="widget uib_w_23" data-uib="app_framework/listitem" data-ver="1"><a>List Item</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
