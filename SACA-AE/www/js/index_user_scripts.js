@@ -119,10 +119,9 @@
                 .find('AlertaComisionProfesor')
                 .each(function()
              {
-                 alert("aqui: "+$(this).find('COMISION').text());
                  
-                 
-                nombre= $(this).find('COMISION').text();
+
+                 nombre= $(this).find('COMISION').text();
                  id= $(this).find('ID').text();
                  profesor= $(this).find('PROFESOR').text();
                  inicio= $(this).find('INICIO').text();
@@ -131,24 +130,38 @@
                  
                  
                  
-                 panel_content = '<h2>'+nombre+'<p>Profesor: '+profesor+'</p><p>Inicio: '+inicio+'</p><p>Fin: '+fin+'</p><p>Entidad: '+entidad+'</p>';
+                 panel_content = '<h2>'+nombre+'</h2><br><br><p>Profesor: '+profesor+'</p><br><p>Inicio: '+inicio+'</p><br><p>Fin: '+fin+'</p><br><p>Entidad: '+entidad+'</p>';
                  
+
                  
+                 list_html += '<li onclick="getDetalles(this)" data-detalles="'+panel_content+'" id="Comision'+id+'"><a href="#detail_page">'+ nombre +'</a></li>';
                  
-                 
-                 //$.ui.addContentDiv(id, panel_content, "Movie Info"); 
-                 
-                 list_html += '<li data-contenido="'+panel_content+'" id="Comision'+id+'"><a href="#detail_page">'+ nombre +'</a></li>';
-                 
-                 $("#informacion").append( ' >>ID= '+id+'');
-                 
-                });
-                
-                
+  
+            }); 
                 
                 $("#list_comisiones5").append(list_html);
                 activate_page("#list_page");
-            }
+}
 
     
 })();
+
+
+/* Funcion que carga los datos en el detail_page */
+
+function getDetalles(elemento) {
+
+    var detalles = elemento.getAttribute("data-detalles");
+    $("#div_detalle").append(detalles);
+}
+
+function borrarContenido(elemento) {
+
+    if(elemento == 1){
+        $("#list_comisiones5").empty();
+    }
+    else if(elemento == 2){
+        $("#div_detalle").empty();
+    }
+}
+
