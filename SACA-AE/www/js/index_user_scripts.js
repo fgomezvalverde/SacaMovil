@@ -136,15 +136,15 @@
                  
                  
                  
-            //$.ui.addContentDiv(id, panel_content, "Movie Info"); 
+                 //$.ui.addContentDiv(id, panel_content, "Movie Info"); 
                  
-                 list_html += '<li><a href="#'+id+'">'+ nombre +'</a></li>';
-             });
+                 list_html += '<li data-contenido="'+panel_content+'" id="Comision'+id+'"><a href="#detail_page">'+ nombre +'</a></li>';
+                 
+                 $("#informacion").append( ' >>ID= '+id+'');
+                 
+                });
                 
                 
-        
-         
-        
                 
                 $("#list_comisiones5").append(list_html);
                 activate_page("#list_page");
