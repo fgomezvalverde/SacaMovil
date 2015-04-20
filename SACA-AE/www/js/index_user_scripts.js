@@ -49,8 +49,36 @@
     
         
     
+    /* Boton de Proyetos en Menu Principal*/
+    $(document).on("click", ".uib_w_9", function(evt)
+    {
+        
+        
+        
+        
+        var urlGetProyectos = "http://localhost:50297/WebServiceMobile.asmx?op=GetProyectos";
+
+        var soapMessageGetProyectos =
+            '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> \
+            <soap:Body> \
+            <GetProyectos xmlns="http://saca-ae.net/"> \
+            <pMail>' + document.getElementById("txt_correo").value.toString() + '</pMail> \
+            </GetProyectos> \
+            </soap:Body> \
+            </soap:Envelope>';
+        $.ajax({
+            url: urlGetProyectos,
+            type: "POST",
+            dataType: "xml",
+            data: soapMessageGetProyectos,
+            complete: endProyectos,
+            contentType: "text/xml; charset=\"utf-8\""
+            });
+        
+    });
     
-    
+     
+     
         /* boton de Comisiones en Menu Principal*/
     $(document).on("click", ".uib_w_5", function(evt)
     {
@@ -109,6 +137,45 @@
                 }
             }
     
+    /* Funcion para cargar proyectos */
+    function endProyectos(xmlHttpRequest, status)
+            {
+                
+                var nombre,id,profesor,inicio,fin,entidad;
+                var list_html = "";
+                var panel_content = "";
+             $(xmlHttpRequest.responseXML)
+                .find('AlertaProyectoProfesor')
+                .each(function()
+             {
+                 
+
+                 nombre= $(this).find('PROYECTO').text();
+                 id= $(this).find('ID').text();
+                 profesor= $(this).find('PROFESOR').text();
+                 inicio= $(this).find('INICIO').text();
+                 fin= $(this).find('FIN').text();
+                 entidad= $(this).find('ENTIDAD').text();
+                 
+                 
+                 
+                 panel_content = '<h3>'+nombre+'</h3><br><br><br><p>Profesor: '+profesor+'</p><br><p>Inicio: '+inicio+'</p><br><p>Fin: '+fin+'</p><br><p>Entidad: '+entidad+'</p>';
+                 
+
+                 
+                 list_html += '<li onclick="getDetalles(this)" data-detalles="'+panel_content+'" id="Proyecto'+id+'"><a href="#detail_page">'+ nombre +'</a></li>';
+                 
+  
+            }); 
+                
+                $("#list_comisiones5").append(list_html);
+                activate_page("#list_page");
+            
+            }
+    
+    
+    
+    /* Funcion para cargar Comisiones */
     function endComisiones(xmlHttpRequest, status)
             {
                 
@@ -130,7 +197,7 @@
                  
                  
                  
-                 panel_content = '<h2>'+nombre+'</h2><br><br><p>Profesor: '+profesor+'</p><br><p>Inicio: '+inicio+'</p><br><p>Fin: '+fin+'</p><br><p>Entidad: '+entidad+'</p>';
+                 panel_content = '<h3>'+nombre+'</h3><br><br><br><p>Profesor: '+profesor+'</p><br><p>Inicio: '+inicio+'</p><br><p>Fin: '+fin+'</p><br><p>Entidad: '+entidad+'</p>';
                  
 
                  
@@ -141,20 +208,22 @@
                 
                 $("#list_comisiones5").append(list_html);
                 activate_page("#list_page");
-}
+            
+            }
 
-    
 })();
 
 
-/* Funcion que carga los datos en el detail_page */
 
+/* Funcion que carga los datos en el detail_page */
 function getDetalles(elemento) {
 
     var detalles = elemento.getAttribute("data-detalles");
     $("#div_detalle").append(detalles);
 }
 
+
+/* Funcion para vaciar algun elemento */
 function borrarContenido(elemento) {
 
     if(elemento == 1){
