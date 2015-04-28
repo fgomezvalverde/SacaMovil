@@ -13,7 +13,7 @@
     $(document).on("click", ".uib_w_10", function(evt)
     {
                     
-        var urlLogin = "http://localhost:50297/WebServiceMobile.asmx?op=Login";
+        var urlLogin = "http://saca-ae.net/WebServiceMobile.asmx?op=Login";
 
         var soapMessageLogin =
             '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> \
@@ -54,7 +54,7 @@
     {
         
         
-        var urlGetProyectos = "http://localhost:50297/WebServiceMobile.asmx?op=GetProyectos";
+        var urlGetProyectos = "http://saca-ae.net/WebServiceMobile.asmx?op=GetProyectos";
 
         var soapMessageGetProyectos =
             '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> \
@@ -80,7 +80,7 @@
     {
         
         
-        var urlGetCursos = "http://localhost:50297/WebServiceMobile.asmx?op=GetCursos";
+        var urlGetCursos = "http://saca-ae.net/WebServiceMobile.asmx?op=GetCursos";
 
         var soapMessageGetCursos =
             '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> \
@@ -110,7 +110,7 @@
         
         
         
-        var urlGetComisiones = "http://localhost:50297/WebServiceMobile.asmx?op=GetComisiones";
+        var urlGetComisiones = "http://saca-ae.net/WebServiceMobile.asmx?op=GetComisiones";
 
         var soapMessageGetComisiones =
             '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> \
@@ -296,4 +296,5 @@ function borrarContenido(elemento) {
         $("#div_detalle").empty();
     }
 }
+
 
