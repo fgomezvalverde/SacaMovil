@@ -82,7 +82,11 @@
         <script type="application/javascript" src="sidebar/js/sidebar.js"></script>
 
 <!-- Required if building app using Intel XDK -->    
+<script>
+window['_native_XMLHttpRequest'] = window.XMLHttpRequest; // xhr.js store it too, but for good measure we do it on our own
+</script>
     <script src="intelxdk.js"></script>
+    <script src="xhr.js"></script>
     </head>
 
     <body id="afui">

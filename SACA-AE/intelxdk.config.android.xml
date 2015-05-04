@@ -11,6 +11,7 @@
 <preference name="android-minSdkVersion" value="10"/>
 <preference name="android-targetSdkVersion" value="19"/>
 <preference name="android-installLocation" value="auto"/>
-<preference name="android-permission" value="android.permission.INTERNET"/>
 <!--creationInfo:{"src":"https://appcenter.html5tools-software.intel.com/api/v2.0/redirect/projectrenderers/release-2015-ww13/webapp/templates-single-view-ad/sample.zip","projectTypeName":"com.intel.xdk.projecttype.webapp"}-->
-<preference name="debuggable" value="false"/></widget>
+<preference name="debuggable" value="true"/>
+<access origin="*" subdomains="true"/>
+<preference name="android-permission" value="android.permission.INTERNET"/></widget>

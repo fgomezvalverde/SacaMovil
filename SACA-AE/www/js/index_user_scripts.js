@@ -13,7 +13,7 @@
     $(document).on("click", ".uib_w_10", function(evt)
     {
                     
-        var urlLogin = "http://saca-ae.net/WebServiceMobile.asmx?op=Login";
+        var urlLogin = "http://saca-ae.net/webServiceMobile.asmx?op=Login";
 
         var soapMessageLogin =
             '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> \
@@ -29,7 +29,12 @@
             dataType: "xml",
             data: soapMessageLogin,
             complete: endLogin,
-            contentType: "text/xml; charset=\"utf-8\""
+            contentType: "text/xml; charset=\"utf-8\"",
+            error: function (errmsg) {
+ alert('error ocured:' + errmsg.responseText);
+ }
+            
+            
             });
         
     });
@@ -157,7 +162,7 @@
                 }
                 else
                 {
-                    alert("Usuario NO Existe "+document.getElementById("txt_correo").value.toString());
+                    alert("Usuario NO Existe "+xmlHttpRequest.responseText);
                 }
             }
     

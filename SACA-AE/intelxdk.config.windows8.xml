@@ -11,4 +11,4 @@
 <preference name="windows-publisher-display-name"/>
 <preference name="windows-publisher-id"/>
 <!--creationInfo:{"src":"https://appcenter.html5tools-software.intel.com/api/v2.0/redirect/projectrenderers/release-2015-ww13/webapp/templates-single-view-ad/sample.zip","projectTypeName":"com.intel.xdk.projecttype.webapp"}-->
-<preference name="debuggable" value="false"/></widget>
+<preference name="debuggable" value="true"/></widget>
