@@ -13,14 +13,15 @@
     $(document).on("click", ".uib_w_10", function(evt)
     {
                     
-        var urlLogin = "http://saca-ae.net/webServiceMobile.asmx?op=Login";
+        var urlLogin = "http://saca-ae.net/webServiceMobile.asmx?op=LoginContra";
 
         var soapMessageLogin =
             '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> \
             <soap:Body> \
-            <Login xmlns="http://saca-ae.net/"> \
+            <LoginContra xmlns="http://saca-ae.net/"> \
             <pMail>' + document.getElementById("txt_correo").value.toString() + '</pMail> \
-            </Login> \
+            <pContrasenia>' + document.getElementById("txt_contra").value.toString() + '</pContrasenia> \
+            </LoginContra> \
             </soap:Body> \
             </soap:Envelope>';
         $.ajax({
