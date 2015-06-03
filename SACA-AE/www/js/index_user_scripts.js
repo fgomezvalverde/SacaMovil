@@ -32,7 +32,7 @@
             complete: endLogin,
             contentType: "text/xml; charset=\"utf-8\"",
             error: function (errmsg) {
- alert('error ocured:' + errmsg.responseText);
+ alert("Usuario o Contraseña incorrectos");
  }
             
             
@@ -148,7 +148,7 @@
             {
                 var name;
              $(xmlHttpRequest.responseXML)
-                .find('LoginResult')
+                .find('LoginContraResult')
                 .each(function()
              {
                 name= $(this).find('Password').text();
@@ -163,7 +163,7 @@
                 }
                 else
                 {
-                    alert("Usuario NO Existe "+xmlHttpRequest.responseText);
+                    alert("Usuario o Contraseña incorrectos");
                 }
             }
     
